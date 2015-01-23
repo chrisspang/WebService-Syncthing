@@ -105,6 +105,62 @@ sub post_ping {
     return $self->post('/ping');
 }
 
+sub post_config {
+    my ($self, $config) = @_;
+
+    return $self->post('/config',
+                       $config,
+#                       headers => {
+#                           content_type => 'text/plain',
+#                       },
+                   );
+
+}
+
+sub post_restart {
+    my $self = shift;
+
+    return $self->post('/restart');
+}
+
+sub post_reset {
+    my $self = shift;
+
+    return $self->post('/reset');
+}
+
+sub post_shutdown {
+    my $self = shift;
+
+    return $self->post('/shutdown');
+}
+
+sub post_error {
+    my ($self, $error) = @_;
+
+    return $self->post('/error',
+                       $error,
+                       headers => {
+                           content_type => 'text/plain',
+                       },
+                   );
+}
+
+sub post_error_clear {
+    my $self = shift;
+
+    return $self->post('/error/clear');
+}
+
+sub post_discovery_hint {
+    my ($self, $data) = @_;
+
+    my $device = $data->{device};
+    my $addr   = $data->{addr};
+
+    return $self->post("/discovery/hint?device=$device&addr=$addr");
+}
+
 sub post_scan {
     my ($self, $data) = @_;
 
@@ -115,6 +171,24 @@ sub post_scan {
     }
 
     return $self->post($url);
+}
+
+sub post_upgrade {
+    my $self = shift;
+
+    return $self->post('/upgrade');
+}
+
+sub post_ignores {
+
+}
+
+sub post_bump {
+    my ($self, $data) = @_;
+
+    my $folder = $data->{folder};
+    my $file   = $data->{file};
+    return $self->post("/bump?folder=$folder&file=$file");
 }
 
 1;
@@ -181,5 +255,27 @@ Ping using a GET request.
 =head2 post_ping
 
 =head2 post_scan
+
+=head2 post_config
+
+=head2 post_restart
+
+=head2 post_reset
+
+=head2 post_shutdown
+
+=head2 post_error
+
+=head2 post_error_clear
+
+=head2 post_discovery_hint
+
+=head2 post_scan
+
+=head2 post_upgrade
+
+=head2 post_ignores
+
+=head2 post_bump
 
 =cut
