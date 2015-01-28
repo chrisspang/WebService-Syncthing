@@ -147,6 +147,9 @@ Examples:
 Set authentication via SYNCTHING_AUTH_TOKEN environment variable, or with
 --auth-token option.
 
+Set the Syncthing GUI URL via SYNCTHING_URL environment variable, or with
+--url option.
+
 =head1 COMMANDS
 
 Too many to list ...
