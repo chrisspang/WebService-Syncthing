@@ -254,8 +254,6 @@ Ping using a GET request.
 
 =head2 post_ping
 
-=head2 post_scan
-
 =head2 post_config
 
 =head2 post_restart
