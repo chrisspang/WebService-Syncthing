@@ -35,7 +35,7 @@ my @cmds = ( @api_cmds,
              qw(
                    help auth-token=s url=s
 
-                   folder=s
+                   folder=s device=s
 
            ) );
 
@@ -46,12 +46,6 @@ GetOptions(\%Options, @cmds)
 
 pod2usage(0) if ($Options{help});
 
-my $auth_token = $Options{'auth-token'} || $ENV{SYNCTHING_AUTH_TOKEN};
-pod2usage('Error: --auth-token or $SYNCTHING_AUTH_TOKEN env var is required')
-    unless $auth_token;
-
-my $url = $Options{'url'} || $ENV{SYNCTHING_URL};
-
 ## Check only one command is given
 my @provided_cmds = map { $Options{$_} ? $_ : () } @api_cmds;
 
@@ -59,9 +53,12 @@ pod2usage('Error: Only provide one and only one command')
     if (scalar @provided_cmds != 1);
 my $cmd = $provided_cmds[0];
 
+my $auth_token = $Options{'auth-token'} || $ENV{SYNCTHING_AUTH_TOKEN};
+my $url = $Options{'url'} || $ENV{SYNCTHING_URL};
+
 ## Create Syncthing object and call the command
 my $ST = WebService::Syncthing->new(
-#    auth_token => $auth_token,
+    auth_token => $auth_token,
     base_url   => $url,
 );
 

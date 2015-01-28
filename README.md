@@ -4,7 +4,7 @@ WebService::Syncthing - Client library for Syncthing API
 
 # VERSION
 
-version 0.002
+version 0.003
 
 # SYNOPSIS
 
@@ -66,8 +66,6 @@ Ping using a GET request.
 # POST Requests
 
 ## post\_ping
-
-## post\_scan
 
 ## post\_config
 
