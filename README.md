@@ -4,7 +4,7 @@ WebService::Syncthing - Client library for Syncthing API
 
 # VERSION
 
-version 0.003
+version 0.10
 
 # SYNOPSIS
 

@@ -14,6 +14,9 @@ use Encode;
 
 use WebService::Syncthing;
 
+# ABSTRACT: Simple command line interface to WebService::Syncthing
+# VERSION
+
 ## Expect utf8 encoded input/output
 binmode STDOUT, ":encoding(UTF-8)";
 binmode STDERR, ":encoding(UTF-8)";

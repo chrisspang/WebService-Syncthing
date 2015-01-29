@@ -1,6 +1,8 @@
 
 package WebService::Syncthing;
 
+# VERSION
+
 # ABSTRACT: Client library for Syncthing API
 
 use Moo;
