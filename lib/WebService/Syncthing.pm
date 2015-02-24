@@ -195,6 +195,8 @@ sub post_bump {
 
 1;
 
+=for Pod::Coverage BUILD
+
 =head1 SYNOPSIS
 
   use WebService::Syncthing;
@@ -215,8 +217,6 @@ Simple client for talking to the Syncthing GUI using the REST API.
 
 The auth_token used to authenticate against the Syncthing GUI. Passed
 as a X-API-Key header in requests.
-
-=head2 BUILD
 
 =head1 GET Requests
 

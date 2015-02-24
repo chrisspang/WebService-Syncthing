@@ -27,8 +27,6 @@ Simple client for talking to the Syncthing GUI using the REST API.
 The auth\_token used to authenticate against the Syncthing GUI. Passed
 as a X-API-Key header in requests.
 
-## BUILD
-
 # GET Requests
 
 ## new
